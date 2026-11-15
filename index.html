@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d18">
+<title>CSS Border Animation Showcase</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+  <h1>CSS Border Animation</h1>
+  <section class="showcase" aria-label="Ten CSS border animation examples">
+    <article class="preview-card"><div class="demo gradient"><span>Gradient Border</span></div></article>
+    <article class="code-card"><h2>Gradient Border CSS</h2><pre><code>.gradient::before {
+  background: linear-gradient(
+    90deg, #06b6d4, #85c5f6,
+    #ec4899, #06b6d4
+  );
+  background-size: 300% 100%;
+  animation: gradientMove 3s
+    linear infinite;
+}</code></pre></article>
+
+    <article class="preview-card"><div class="demo neon"><span>Neon Border</span></div></article>
+    <article class="code-card"><h2>Neon Border CSS</h2><pre><code>.neon {
+  border: 2px solid #22d3ee;
+  box-shadow: 0 0 10px
+    #22d3ee, 0 0 30px #22d3ee;
+  animation: neonPulse 1.5s
+    ease-in-out infinite;
+}</code></pre></article>
+
+    <article class="preview-card"><div class="demo rotating"><span>Rotating Border</span></div></article>
+    <article class="code-card"><h2>Rotating Border CSS</h2><pre><code>@property --angle {
+  syntax: '&lt;angle&gt;';
+  initial-value: 0deg;
+  inherits: false;
+}
+.rotating::before {
+  background: conic-gradient(
+    from var(--angle),
+    #22c55e, #3b82f6, #a855f7,
+    #f59e0b, #22c55e
+  );
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  to { --angle: 360deg; }
+}</code></pre></article>
+
+    <article class="preview-card"><div class="demo dashed"><span>Dashed Border</span></div></article>
+    <article class="code-card"><h2>Dashed Border CSS</h2><pre><code>.dashed {
+  border: 3px dashed #38bdf8;
+  animation: dash 1s linear
+    infinite;
+}
+@keyframes dash {
+  to { border-color: #ec4899; }
+}</code></pre></article>
+
+    <article class="preview-card"><div class="demo rainbow"><span>Rainbow Border</span></div></article>
+    <article class="code-card"><h2>Rainbow Border CSS</h2><pre><code>.rainbow::before {
+  background: linear-gradient(
+    45deg, red, orange, yellow,
+    green, blue, indigo, violet, red
+  );
+  background-size: 400%;
+  animation: rainbow 4s linear
+    infinite;
+}</code></pre></article>
+
+    <article class="preview-card"><div class="demo pulse"><span>Pulse Border</span></div></article>
+    <article class="code-card"><h2>Pulse Border CSS</h2><pre><code>.pulse::before {
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid #818cf8;
+  background: transparent;
+  animation: pulseBorder 2s
+    ease-out infinite;
+}</code></pre></article>
+
+    <article class="preview-card"><div class="demo corner"><span>Corner Draw</span></div></article>
+    <article class="code-card"><h2>Corner Draw CSS</h2><pre><code>.corner::before {
+  inset: -2px;
+  background:
+    linear-gradient(#22c55e, #22c55e)
+      top left / 25px 2px no-repeat,
+    linear-gradient(#22c55e, #22c55e)
+      top left / 2px 25px no-repeat,
+    linear-gradient(#22c55e, #22c55e)
+      bottom right / 25px 2px no-repeat,
+    linear-gradient(#22c55e, #22c55e)
+      bottom right / 2px 25px no-repeat;
+  animation: cornerDraw 2s linear infinite;
+}</code></pre></article>
+
+    <article class="preview-card"><div class="demo shine"><span>Shine Border</span></div></article>
+    <article class="code-card"><h2>Shine Border CSS</h2><pre><code>.shine::before {
+  inset: 0;
+  background: linear-gradient(
+    120deg, transparent,
+    rgba(255,255,255,.4), transparent
+  );
+  width: 60px;
+  left: -100px;
+  z-index: 0;
+  animation: shine 2s linear infinite;
+}</code></pre></article>
+
+    <article class="preview-card"><div class="demo electric"><span>Electric Border</span></div></article>
+    <article class="code-card"><h2>Electric Border CSS</h2><pre><code>.electric {
+  border: 2px solid #a855f7;
+  animation: flicker .2s
+    infinite alternate;
+}</code></pre></article>
+
+    <article class="preview-card"><div class="demo morph"><span>Morph Border</span></div></article>
+    <article class="code-card"><h2>Morph Border CSS</h2><pre><code>.morph {
+  border: 3px solid #f97316;
+  animation: morph 3s ease-in-out
+    infinite;
+}</code></pre></article>
+  </section>
+  <footer><span>CSS BORDER LAB</span><button id="replay" type="button">Replay animations ↻</button></footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
